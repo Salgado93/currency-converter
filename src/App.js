@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useEffect } from "react";
+import "./App.css";
+import CurrencyRow from "./components/CurrencyRow";
+import Footer from "./components/Footer";
 
 function App() {
+  useEffect(() => {
+    document.title = "Convertidor de Moneda";
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="page-container">
+      <div className="content-wrap">
+        <h1>Convertir</h1>
+        <CurrencyRow />
+        <div>=</div>
+        <CurrencyRow />
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }
